@@ -36,7 +36,7 @@ type Email struct {
 	SenderAddress string            `json:"senderAddress"`
 	Content       EmailContent      `json:"content"`
 	Recipients    EmailRecipients   `json:"recipients"`
-	Attachments   []EmailAttachment `json:"attachments"`
+	Attachments   []EmailAttachment `json:"attachments,omitempty"`
 	ReplyTo       []EmailAddress    `json:"replyTo,omitempty"`
 }
 
