@@ -86,6 +86,9 @@ func (m *SmsMessage) Send() error {
 	}
 
 	rsp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return err
+	}
 	if rsp.StatusCode != 202 {
 		var rerr ErrorResponse
 		rd, _ := io.ReadAll(rsp.Body)
